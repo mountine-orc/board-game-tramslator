@@ -1,0 +1,30 @@
+<?php
+ // module/Game/view/game/game/index.phtml:
+
+ $title = 'My games';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+ <p>
+     <a href="<?php echo $this->url('game', array('action'=>'add'));?>">Add new game</a>
+ </p>
+
+ <table class="table">
+ <tr>
+     <th>Name(original)</th>
+     <th>Name(translated)</th>
+     <th>&nbsp;</th>
+ </tr>
+ <?php foreach ($games as $game) : ?>
+ <tr>
+     <td><?php echo $this->escapeHtml($game->name_original);?></td>
+     <td><?php echo $this->escapeHtml($game->name_translated);?></td>
+     <td>
+         <a href="<?php echo $this->url('game',
+             array('action'=>'edit', 'id' => $game->id));?>">Edit</a>
+         <a href="<?php echo $this->url('game',
+             array('action'=>'delete', 'id' => $game->id));?>">Delete</a>
+     </td>
+ </tr>
+ <?php endforeach; ?>
+ </table>

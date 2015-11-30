@@ -1,0 +1,25 @@
+<?php
+ // module/Game/view/game/game/edit.phtml:
+
+ $title = 'Edit game';
+ $this->headTitle($title);
+ ?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <?php
+ $form = $this->form;
+ $form->setAttribute('action', $this->url(
+     'game',
+     array(
+         'action' => 'edit',
+         'id'     => $this->id,
+     )
+ ));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo $this->formRow($form->get('name_original'));
+ echo $this->formRow($form->get('name_translated'));
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();

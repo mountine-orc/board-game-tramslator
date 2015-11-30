@@ -1,0 +1,11 @@
+ <!-- Filename: /module/Category/view/Category/list/index.phtml -->
+ <h1>Category</h1>
+
+ <?php foreach ($this->posts as $post): ?>
+ <article>
+     <h1 id="post<?= $post->getId() ?>"><?= $post->getNameOriginal() ?></h1>
+     <p>
+         <?= $post->getNameTranslated() ?>
+     </p>
+ </article>
+ <?php endforeach ?>
