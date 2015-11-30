@@ -4,7 +4,7 @@
 Інсталяція
 ---------------------------
 
-    git clone https://mountine_orc@bitbucket.org/mountine_orc/bord-game-translator-site.git
+    git clone https://github.com/mountine-orc/board-game-tramslator.git
 
 using Composer
 
